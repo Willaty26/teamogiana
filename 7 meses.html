@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Meses a tu lado ❤️</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+            width: 85%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            color: #d23c77;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 15px auto;
+            border: 4px solid white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .photo:hover {
+            transform: scale(1.05);
+        }
+        button {
+            background: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #ff6b6b;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        button:active {
+            transform: scale(0.95);
+            background: #ffebee;
+        }
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: #ff6b6b;
+            animation: float 5s ease-in-out infinite;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(15deg); }
+        }
+        .signature {
+            font-style: italic;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>¡7 Meses Contigo! 🌸</h1>
+        <img src="https://i.ibb.co/M5ZM2gCJ/Whats-App-Image-2025-05-28-at-04-22-44-0ccf1669.jpg" class="photo" alt="Nuestra foto">
+        <p>Cada día contigo es una bendicion. Gracias por todo mi niña hermosa.</p>
+        <p>¿Aceptas un abracito virtual?</p>
+        <button onclick="showLove()">¡Hazme Click!</button>
+        <p class="signature">Con todo mi amor, para ti.</p>
+    </div>
+
+    <script>
+        // Corazones flotantes
+        function createHearts() {
+            const colors = ['#ff6b6b', '#ff8e8e', '#d23c77', '#ffb3b3'];
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.animationDelay = Math.random() * 4 + 's';
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                document.body.appendChild(heart);
+            }
+        }
+
+        // Mensaje especial al hacer clic
+        function showLove() {
+            document.querySelector('.card').innerHTML = `
+                <h1>¡Te Amo! 💌</h1>
+                <img src="https://i.ibb.co/twvHBq0h/Whats-App-Image-2025-05-28-at-04-49-45-7c576f72.jpg" class="photo" alt="Nuestra foto">
+                <p>En estos 7 meses has llenado mi vida de colores, risas y amor infinito.</p>
+                <p>Estare contigo todos los días de mi vida, Te amo.</p>
+                <div style="font-size: 2.5rem; margin: 20px 0;">❤️🔥</div>
+                <p class="signature">Para siempre, tu persona.</p>
+            `;
+            createHearts();
+        }
+
+        // Iniciar corazones al cargar
+        window.onload = createHearts;
+    </script>
+</body>
+</html>
